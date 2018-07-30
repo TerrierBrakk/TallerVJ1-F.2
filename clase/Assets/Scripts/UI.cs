@@ -6,14 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour {
 	int contador=0;
-	//private int vidas=3;
-	//public Text UIvidas;
+
+
 	public Text UIScore;
 	//int daño=1;
 
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -29,12 +28,7 @@ public class UI : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		/*print ("Has Perdido una vida");
-		if (other.gameObject.CompareTag ("Finish")) 
-		{
-			vidas -= daño;
-			print ("menos una vida");
-		}*/
+		
 
 		if (other.gameObject.CompareTag ("Objeto")) {
 
@@ -42,18 +36,13 @@ public class UI : MonoBehaviour {
 		}
 	}
 
-	/*void perdivida()
-	{
-		if (vidas <= 0) 
-		{
-			death ();
-		}
-	}*/
+
 
 	void death()
 	{		
 			SceneManager.LoadScene ("GameOver");
 	}
+
 	void colectando()
 	{
 		if (contador == 20) 
@@ -61,6 +50,7 @@ public class UI : MonoBehaviour {
 			Win ();
 		}
 	}
+
 	void Win()
 	{
 		print ("Gnaste");
