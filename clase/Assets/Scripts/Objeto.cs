@@ -12,4 +12,8 @@ public class Objeto : MonoBehaviour {
 
 		}
 	}
+
+	void Update(){
+		transform.Rotate(new Vector3(0.5f,0.5f,0.5f));
+	}
 }
