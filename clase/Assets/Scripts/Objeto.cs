@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Objeto : MonoBehaviour {
 
-	void OnCollisionEnter(Collision other)
+	void OnTriggerEnter(Collider other)
 	{
 
 		if (other.gameObject.CompareTag ("Player")) {

@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour {
 	int contador=0;
-	private int vidas=3;
-	public Text UIvidas;
+	//private int vidas=3;
+	//public Text UIvidas;
 	public Text UIScore;
-	int daño=1;
+	//int daño=1;
 
 	// Use this for initialization
 	void Start () {
@@ -19,35 +19,37 @@ public class UI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		UIvidas.text = vidas.ToString ();
+		//UIvidas.text = vidas.ToString ();
 		UIScore.text = contador.ToString ();
-		perdivida ();
+		//perdivida ();
 		colectando ();
 
 	}
 
 
-	void OnCollisionEnter(Collision other)
+	void OnTriggerEnter(Collider other)
 	{
-		print ("Has Perdido una vida");
+		/*print ("Has Perdido una vida");
 		if (other.gameObject.CompareTag ("Finish")) 
 		{
 			vidas -= daño;
 			print ("menos una vida");
-		}
+		}*/
+
 		if (other.gameObject.CompareTag ("Objeto")) {
 
 			contador=contador+1;
 		}
 	}
 
-	void perdivida()
+	/*void perdivida()
 	{
 		if (vidas <= 0) 
 		{
 			death ();
 		}
-	}
+	}*/
+
 	void death()
 	{		
 			SceneManager.LoadScene ("GameOver");
